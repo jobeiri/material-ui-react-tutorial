@@ -26,6 +26,11 @@ import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 
+import AppBar from "@material-ui/core/AppBar";
+import ToolBar from "@material-ui/core/ToolBar";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
+
 const useStyles = makeStyles({
   root: {
     background: "linear-gradient(45deg, #333, #000)",
@@ -82,6 +87,15 @@ function App() {
       <Container maxWidth="xs">
         <div className="App">
           <header className="App-header">
+            <AppBar color="secondary">
+              <ToolBar>
+                <IconButton>
+                  <MenuIcon />
+                </IconButton>
+                <Typography variant="h6">MUI Theming</Typography>
+                <Button>Login</Button>
+              </ToolBar>
+            </AppBar>
             <Typography variant="h2" component="div">
               Welcome to MUI
             </Typography>
@@ -89,13 +103,17 @@ function App() {
               Learn how to use Material Ui
             </Typography>
             <ButtonStyled />
-            <TextField
-              variant="filled"
-              color="secondary"
-              type="email"
-              label="Email"
-              placeholder="test@test.com"
-            />
+            <Grid container spacing={4} justify="center">
+              <Grid item xs={3} sm={6}>
+                <Paper style={{ height: 75, width: "100%" }} />
+              </Grid>
+              <Grid item xs={3}>
+                <Paper style={{ height: 75, width: "100%" }} />
+              </Grid>
+              <Grid item xs={3}>
+                <Paper style={{ height: 75, width: "100%" }} />
+              </Grid>
+            </Grid>
             <CheckboxExample />
             <ButtonGroup variant="contained" color="primary">
               <Button startIcon={<SaveIcon />}>Save</Button>
